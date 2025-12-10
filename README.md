@@ -84,3 +84,36 @@ Kernel successfully upgraded from 5.15.0-163-generic to 6.8.0-88-generic
 - https://kernel.ubuntu.com/mainline/
 
 
+
+---
+
+## Bonus: Reverting to Previous Kernel
+
+### Step 1: Remove the New Kernel
+```bash
+sudo apt remove linux-image-6.8.0-88-generic linux-modules-6.8.0-88-generic
+```
+
+### Step 2: Update GRUB
+```bash
+sudo update-grub
+```
+
+### Step 3: Reboot
+```bash
+sudo reboot
+```
+
+### Step 4: Verify Kernel Version
+```bash
+uname -r
+```
+
+**Output:**
+```text
+5.15.0-163-generic
+```
+
+### Result
+
+Successfully reverted from 6.8.0-88-generic back to 5.15.0-163-generic
